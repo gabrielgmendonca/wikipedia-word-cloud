@@ -22,8 +22,12 @@ text = tokenize.word_tokenize(text, language='portuguese')
 custom_sw = nltk.corpus.stopwords.words('portuguese')
 custom_sw += title.split()
 custom_sw += extra_sw
-text = [RSLPStemmer().stem(w) for w in text if w not in custom_sw]
 
+text = [w for w in text if w not in custom_sw]
+
+if st.checkbox('Usar apenas radicais?'):
+  text = [RSLPStemmer().stem(w) for w in text]
+  
 wordcloud = WordCloud().generate(' '.join(text))
 
 fig, ax = plt.subplots()
