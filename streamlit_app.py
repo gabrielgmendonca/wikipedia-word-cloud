@@ -17,7 +17,8 @@ custom_sw += title.split()
 custom_sw += extra_sw
 wordcloud = WordCloud(stopwords=custom_sw).generate(text)
 
-plt.imshow(wordcloud, interpolation='bilinear')
-plt.axis("off")
-plt.show()
-st.pyplot()
+fig, ax = plt.subplots()
+ax.imshow(wordcloud, interpolation='bilinear')
+ax.axis("off")
+# plt.show()
+st.pyplot(fig)
