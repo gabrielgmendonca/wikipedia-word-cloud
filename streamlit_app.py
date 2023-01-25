@@ -8,7 +8,7 @@ import nltk
 nltk.download('stopwords')
 
 wiki.set_lang('pt')
-title = 'Roda de samba'
+title = st.text_input('Artigo da Wikipédia', 'Roda de samba')
 text = wiki.page(title).content
 extra_sw = []
 
