@@ -12,7 +12,7 @@ title = 'Roda de samba'
 text = wiki.page(title).content
 extra_sw = []
 
-custom_sw = stopwords.words('portuguese')
+custom_sw = nltk.corpus.stopwords.words('portuguese')
 custom_sw += title.split()
 custom_sw += extra_sw
 wordcloud = WordCloud(stopwords=custom_sw).generate(text)
